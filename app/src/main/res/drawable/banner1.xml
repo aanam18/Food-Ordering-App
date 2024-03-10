@@ -1,0 +1,51 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="100dp"
+    android:viewportWidth="300"
+    android:viewportHeight="100">
+
+  <!-- Background Rectangle -->
+  <path
+      android:pathData="M0,0h300v100h-300z"
+      android:fillColor="#FF5722"/> <!-- Orange color -->
+
+  <!-- White Strip at the Top -->
+  <path
+      android:pathData="M0,0h300v20h-300z"
+      android:fillColor="#FFFFFF"/> <!-- White color -->
+
+  <!-- Text "BANNER" -->
+  <group
+      android:translateX="150"
+      android:translateY="60">
+    <!-- Text Path -->
+    <path
+        android:pathData="M0,0L50,0L65,20L0,20z"
+        android:fillColor="#FFFFFF"/> <!-- White color -->
+    <path
+        android:pathData="M55,20L70,0L120,0L105,20z"
+        android:fillColor="#FFFFFF"/> <!-- White color -->
+    <!-- Letters -->
+    <path
+        android:pathData="M70,0L85,0L85,20L70,20z"
+        android:fillColor="#FF5722"/> <!-- Orange color -->
+    <path
+        android:pathData="M90,0L105,0L105,20L90,20z"
+        android:fillColor="#FF5722"/> <!-- Orange color -->
+    <path
+        android:pathData="M110,0L125,0L125,20L110,20z"
+        android:fillColor="#FF5722"/> <!-- Orange color -->
+    <path
+        android:pathData="M130,0L145,0L145,20L130,20z"
+        android:fillColor="#FF5722"/> <!-- Orange color -->
+    <path
+        android:pathData="M150,0L165,0L165,20L150,20z"
+        android:fillColor="#FF5722"/> <!-- Orange color -->
+    <path
+        android:pathData="M170,0L185,0L185,20L170,20z"
+        android:fillColor="#FF5722"/> <!-- Orange color -->
+    <path
+        android:pathData="M190,0L205,0L205,20L190,20z"
+        android:fillColor="#FF5722"/> <!-- Orange color -->
+  </group>
+</vector>
