@@ -18,6 +18,14 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
+    android {
+        // Other configurations...
+
+        lint {
+            baseline = file("lint-baseline.xml")
+        }
+    }
+
 
     android {
 
