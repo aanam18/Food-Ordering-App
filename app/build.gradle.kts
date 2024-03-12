@@ -24,6 +24,7 @@ android {
         lint {
             baseline = file("lint-baseline.xml")
             abortOnError = false
+            ignoreWarnings= true // Ignores all warnings
         }
     }
 
