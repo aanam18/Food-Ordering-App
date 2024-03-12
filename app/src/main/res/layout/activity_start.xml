@@ -95,7 +95,6 @@
 
         android:layout_marginStart="68dp"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
-        app:layout_constraintEnd_toStartOf="@+id/imageView12"
         app:layout_constraintStart_toEndOf="@+id/gallery"
         app:layout_constraintTop_toBottomOf="@+id/google"
         app:srcCompat="@drawable/dialphone" />
