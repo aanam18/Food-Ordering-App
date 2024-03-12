@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView20"
         app:srcCompat="@drawable/bell" />
 
-    <fragment
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="0dp"
