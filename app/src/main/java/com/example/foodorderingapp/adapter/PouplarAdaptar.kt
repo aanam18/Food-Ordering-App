@@ -9,35 +9,48 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.foodorderingapp.DetailsActivity
 import com.example.foodorderingapp.databinding.PopularItemBinding
 
-class PouplarAdaptar (private val items:List<String>,private val price:List<String>, private val  image: List<Int>,private val requireContext : Context) : RecyclerView.Adapter<PouplarAdaptar.PopularViewHolder>() {
+class PouplarAdaptar(
+    private val items: List<String>,
+    private val price: List<String>,
+    private val image: List<Int>,
+    private val requireContext: Context
+) : RecyclerView.Adapter<PouplarAdaptar.PopularViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PopularViewHolder {
-        return PopularViewHolder(PopularItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return PopularViewHolder(
+            PopularItemBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
-
 
 
     override fun onBindViewHolder(holder: PopularViewHolder, position: Int) {
-       val item = items[position]
+        val item = items[position]
         val images = image[position]
         val price = price[position]
-        holder.bind(item,price,images)
+        holder.bind(item, price, images)
         holder.itemView.setOnClickListener {
             val intent = Intent(requireContext, DetailsActivity::class.java)
             intent.putExtra("MenuItemName", item)
-            intent.putExtra("MenuItemImage",images)
+            intent.putExtra("MenuItemImage", images)
             requireContext.startActivity(intent)
         }
     }
+
     override fun getItemCount(): Int {
-       return items.size
+        return items.size
     }
-    class PopularViewHolder(private val binding: PopularItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+    class PopularViewHolder(private val binding: PopularItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         private val imagesView = binding.imageView6
-        fun bind(item: String,price: String, images: Int) {
+        fun bind(item: String, price: String, images: Int) {
             binding.foodNamePopular.text = item
-            binding.pricePopular.text= price
+            binding.pricePopular.text = price
             imagesView.setImageResource(images)
         }
 

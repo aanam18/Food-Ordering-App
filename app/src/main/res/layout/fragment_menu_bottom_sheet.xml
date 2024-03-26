@@ -3,36 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-
     android:background="@color/white"
+
+    android:orientation="vertical"
     tools:context=".menuBottomSheetFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
     <ImageButton
         android:id="@+id/buttonback"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:src="@drawable/backarrow"
-        android:background="@android:color/transparent" />
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@android:color/transparent"
+        android:src="@drawable/backarrow" />
 
     <TextView
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-
-        android:textSize="24sp"
-        android:textColor="@color/black"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Menu" />
+
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Menu"
+        android:fontFamily="@font/acme"
+        android:textColor="@color/black"
+        android:textSize="24sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/menuRecyclerView"
-        android:layout_marginTop="8dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:fontFamily="@font/acme"
+        android:layout_height="match_parent"
+        android:layout_marginTop="8dp" />
 
 </LinearLayout>

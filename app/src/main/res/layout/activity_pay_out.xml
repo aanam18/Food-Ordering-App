@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/white"
+    android:orientation="vertical"
     tools:context=".PayOutActivity">
 
     <LinearLayout
@@ -13,7 +13,9 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+
         <ImageButton
+            android:id="@+id/Back"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
@@ -23,16 +25,16 @@
             android:src="@drawable/backarrow"
             android:text="Button" />
 
-
         <TextView
             android:id="@+id/textView26"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="8dp"
             android:text="Edit"
+            android:fontFamily="@font/akaya_telivigala"
             android:textColor="@color/textColor"
             android:textSize="20sp"
-            android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/button7" />
@@ -57,6 +59,7 @@
                 android:layout_weight="1"
                 android:paddingLeft="8dp"
                 android:text="Name"
+                android:fontFamily="@font/acme"
                 android:textColor="@color/black" />
 
             <EditText
@@ -66,6 +69,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:ems="10"
+                android:fontFamily="@font/acme"
                 android:inputType="text"
                 android:text="Name"
                 android:textColor="@color/black" />
@@ -77,6 +81,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/acme"
             android:background="@drawable/profileedittextshape"
             android:gravity="center_vertical"
             android:orientation="horizontal"
@@ -88,6 +93,7 @@
 
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
                 android:layout_weight="1"
                 android:paddingLeft="8dp"
                 android:text="Address"
@@ -102,6 +108,7 @@
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:ems="10"
+                android:fontFamily="@font/acme"
                 android:inputType="textMultiLine"
                 android:text="Lorem ipsum is placeholder text
 commonly used in the graphic,
@@ -127,6 +134,7 @@ for previewing layouts and visual"
 
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/acme"
                 android:layout_weight="1"
                 android:paddingLeft="8dp"
                 android:text="Phone No"
@@ -138,6 +146,7 @@ for previewing layouts and visual"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:fontFamily="@font/acme"
                 android:ems="10"
                 android:inputType="text"
                 android:text="12345"
@@ -162,6 +171,7 @@ for previewing layouts and visual"
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/acme"
                 android:paddingLeft="8dp"
                 android:text="Payment Method"
                 android:textColor="@color/black" />
@@ -179,6 +189,7 @@ for previewing layouts and visual"
             android:layout_height="56dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/profileedittextshape"
@@ -194,6 +205,7 @@ for previewing layouts and visual"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingLeft="8dp"
+                android:fontFamily="@font/acme"
                 android:text="Total Amount"
                 android:textColor="@color/black" />
 
@@ -203,6 +215,7 @@ for previewing layouts and visual"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
+                android:fontFamily="@font/acme"
                 android:ems="10"
                 android:gravity="end"
                 android:inputType="none"
@@ -224,6 +237,7 @@ for previewing layouts and visual"
         android:layout_marginBottom="32dp"
         android:background="@drawable/edittextshape"
         android:text="Place My Order"
+        android:fontFamily="@font/amaranth"
         android:textAllCaps="false"
         android:textColor="@color/textColor" />
 </FrameLayout>

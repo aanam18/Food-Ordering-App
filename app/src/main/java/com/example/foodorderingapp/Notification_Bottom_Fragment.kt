@@ -24,8 +24,12 @@ class Notification_Bottom_Fragment : BottomSheetDialogFragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentNotificationBottomBinding.inflate(layoutInflater,container,false)
-        val notifications = listOf("Your Order has been Canceled Successfully", "Order has been taken by the driver","Congrats Your Order is placed")
+        binding = FragmentNotificationBottomBinding.inflate(layoutInflater, container, false)
+        val notifications = listOf(
+            "Your Order has been Canceled Successfully",
+            "Order has been taken by the driver",
+            "Congrats Your Order is placed"
+        )
         val notificationImages = listOf(R.drawable.sademoji, R.drawable.car, R.drawable.done)
         val adapter = NotifaicationAdapter(ArrayList(notifications), ArrayList(notificationImages))
         binding.notificationRecyclerView.layoutManager = LinearLayoutManager(requireContext())

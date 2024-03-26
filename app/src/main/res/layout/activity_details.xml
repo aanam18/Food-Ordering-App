@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Food Name"
+        android:fontFamily="@font/acme"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,6 +58,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="Short Description"
+        android:fontFamily="@font/acme"
         android:textColorHighlight="@color/black"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +71,7 @@
         android:layout_marginEnd="8dp"
         android:text="Lorem ipsum dolor sit amet,  consectetur adipiscing elit,  sed do eiusmod tempor incididunt  ut labore et dolore magna aliqua. Ut enim a"
         app:layout_constraintEnd_toEndOf="parent"
+        android:fontFamily="@font/acme"
         app:layout_constraintStart_toStartOf="@+id/textView30"
         app:layout_constraintTop_toBottomOf="@+id/textView30" />
 
@@ -78,6 +81,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Ingredients"
+        android:fontFamily="@font/acme"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,6 +98,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.022"
         app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/acme"
         app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
     <androidx.appcompat.widget.AppCompatButton
@@ -106,6 +111,7 @@
         android:background="@drawable/addtocart"
         android:text="Add To Cart"
         android:textColor="@color/white"
+        android:fontFamily="@font/amaranth"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

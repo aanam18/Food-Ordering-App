@@ -12,7 +12,7 @@ class DetailsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val foodName = intent.getStringExtra("MenuItemName")
-        val foodImage = intent.getIntExtra("MenuItemImage",0)
+        val foodImage = intent.getIntExtra("MenuItemImage", 0)
         binding.detailFoodNAme.text = foodName
         binding.detailFoodImage.setImageResource(foodImage)
 

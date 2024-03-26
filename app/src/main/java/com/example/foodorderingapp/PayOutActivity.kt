@@ -9,10 +9,14 @@ class PayOutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPayOutBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
+
         binding.PlaceMyOrder.setOnClickListener {
             val bottomSheetDialog = CongratsBottomSheetFragment()
-            bottomSheetDialog.show(supportFragmentManager,"Test")
+            bottomSheetDialog.show(supportFragmentManager, "Test")
+
+
         }
     }
 }

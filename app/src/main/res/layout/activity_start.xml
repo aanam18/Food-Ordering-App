@@ -22,14 +22,18 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enjoy reasturant meals\n at home"
-        android:textAlignment="center"
         android:textColor="@color/textColor"
-        android:textSize="20sp"
+        android:fontFamily="@font/acme"
+
+        android:text="Conquer Hunger with a Tap!"
+        android:textAlignment="center"
+
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="@+id/imageView"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/nextButton"
@@ -45,21 +49,22 @@
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.857" />
-
-
+        app:layout_constraintVertical_bias="0.862" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
+        android:textColor="@color/textColor"
+        android:fontFamily="@font/courgette"
         android:text="Design By \nAnam Shaikh"
         android:textAlignment="center"
-        android:textColor="@color/textColor"
+
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
@@ -115,9 +120,9 @@
         android:id="@+id/email"
         android:layout_width="69dp"
         android:layout_height="47dp"
-        android:layout_marginEnd="36dp"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/phone"
         app:layout_constraintTop_toBottomOf="@+id/google"
         app:srcCompat="@drawable/mail_icon" />
 

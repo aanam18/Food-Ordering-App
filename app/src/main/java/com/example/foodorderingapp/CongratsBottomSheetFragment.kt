@@ -11,8 +11,8 @@ import com.example.foodorderingapp.databinding.FragmentMenuBottomSheetBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 
-class CongratsBottomSheetFragment : BottomSheetDialogFragment(){
-private lateinit var binding : FragmentCongratsBottomSheetBinding
+class CongratsBottomSheetFragment : BottomSheetDialogFragment() {
+    private lateinit var binding: FragmentCongratsBottomSheetBinding
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -24,7 +24,7 @@ private lateinit var binding : FragmentCongratsBottomSheetBinding
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentCongratsBottomSheetBinding.inflate(layoutInflater,container,false)
+        binding = FragmentCongratsBottomSheetBinding.inflate(layoutInflater, container, false)
         binding.goHome.setOnClickListener {
             val intent = Intent(requireContext(), MainActivity::class.java)
             startActivity(intent)

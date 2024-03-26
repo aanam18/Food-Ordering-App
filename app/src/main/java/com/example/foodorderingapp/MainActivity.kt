@@ -13,14 +13,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        binding=ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         var NavController = findNavController(R.id.fragmentContainerView)
         var bottomnav = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomnav.setupWithNavController(NavController)
-        binding.notificationButton.setOnClickListener{
+        binding.notificationButton.setOnClickListener {
             val bottomSheetDialog = Notification_Bottom_Fragment()
-            bottomSheetDialog.show(supportFragmentManager,"Test")
+            bottomSheetDialog.show(supportFragmentManager, "Test")
         }
     }
 }

@@ -9,41 +9,48 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.foodorderingapp.DetailsActivity
 import com.example.foodorderingapp.databinding.MenuItemBinding
 
-class MenuAdapter(private val menuItemsName:MutableList<String>, private val menuItemPrice:MutableList<String>, private val MenuImage:MutableList<Int>, private val requireContext : Context):
+class MenuAdapter(
+    private val menuItemsName: MutableList<String>,
+    private val menuItemPrice: MutableList<String>,
+    private val MenuImage: MutableList<Int>,
+    private val requireContext: Context
+) :
     RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
-private  val itemClickListener:OnClickListener ?=null
+    private val itemClickListener: OnClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuViewHolder {
-        val binding = MenuItemBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding = MenuItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return MenuViewHolder(binding)
     }
-
 
 
     override fun onBindViewHolder(holder: MenuViewHolder, position: Int) {
         holder.bind(position)
     }
-    override fun getItemCount(): Int =menuItemsName.size
-    inner class MenuViewHolder(private val binding: MenuItemBinding):RecyclerView.ViewHolder(binding.root) {
+
+    override fun getItemCount(): Int = menuItemsName.size
+    inner class MenuViewHolder(private val binding: MenuItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         init {
-            binding.root.setOnClickListener{
-                val position =adapterPosition
-                if (position!=RecyclerView.NO_POSITION){
+            binding.root.setOnClickListener {
+                val position = adapterPosition
+                if (position != RecyclerView.NO_POSITION) {
                     itemClickListener?.onItemClick(position)
 
                 }
                 //set OnClickListener to open Details
                 val intent = Intent(requireContext, DetailsActivity::class.java)
                 intent.putExtra("MenuItemName", menuItemsName.get(position))
-                intent.putExtra("MenuItemImage",MenuImage.get(position))
+                intent.putExtra("MenuItemImage", MenuImage.get(position))
                 requireContext.startActivity(intent)
 
             }
         }
+
         fun bind(position: Int) {
             binding.apply {
-                menuFoodName.text=menuItemsName[position]
-                menuprice.text=menuItemPrice[position]
+                menuFoodName.text = menuItemsName[position]
+                menuprice.text = menuItemPrice[position]
                 menuImage.setImageResource(MenuImage[position])
 
 
@@ -52,7 +59,8 @@ private  val itemClickListener:OnClickListener ?=null
 
 
     }
-    interface OnClickListener{
+
+    interface OnClickListener {
         fun onItemClick(position: Int)
 
     }

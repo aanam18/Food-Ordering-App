@@ -49,9 +49,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val imageList = ArrayList<SlideModel>()
-        imageList.add(SlideModel(R.drawable.menu1))
-        imageList.add(SlideModel(R.drawable.menu2))
-        imageList.add(SlideModel(R.drawable.menu3))
+        imageList.add(SlideModel(R.drawable.r,ScaleTypes.CENTER_INSIDE))
+        imageList.add(SlideModel(R.drawable.rr,ScaleTypes.CENTER_INSIDE))
+        imageList.add(SlideModel(R.drawable.rrr,ScaleTypes.CENTER_INSIDE))
 
 
     val imageSlider = binding.imageSlider
@@ -68,9 +68,9 @@ class HomeFragment : Fragment() {
                 Toast.makeText(requireContext(),itemmessage,Toast.LENGTH_LONG).show()
             }
         })
-        val foodName = listOf("Burger","Pizza","Sandwich","Noodles","item")
-        val Price = listOf("5%","7%","8%","9%","10%")
-        val popularFoodImage = listOf(R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1,R.drawable.menu1)
+        val foodName = listOf("Burger","Pizza","Sandwich","Noodles","Tacos","Tandoori Chicken","Shawarma")
+        val Price = listOf("5$","7$","8$","9$","10%","60$","80$","70$")
+        val popularFoodImage = listOf(R.drawable.burger,R.drawable.pizza,R.drawable.sandwich,R.drawable.noodles,R.drawable.tacos1,R.drawable.chicken,R.drawable.shwarma)
         val adaptar = PouplarAdaptar(foodName,Price,popularFoodImage,requireContext())
         binding.PopularRecyclerView.layoutManager=LinearLayoutManager(requireContext())
         binding.PopularRecyclerView.adapter=adaptar

@@ -27,10 +27,10 @@ class CartFragment : Fragment() {
     ): View? {
         binding = FragmentCartBinding.inflate(inflater, container, false)
 
-        val cartfoodname = listOf("Burger", "Pizza", "Noodles", "Fried Rice")
-        val cartItemPrice = listOf("$5", "$3", "$10", "$2")
+        val cartfoodname = listOf("Burger", "French Fries")
+        val cartItemPrice = listOf("5$", "87$")
         val cartImage = listOf(
-            R.drawable.menu2, R.drawable.menu3, R.drawable.menu5, R.drawable.menu4,
+            R.drawable.menu1, R.drawable.menu2,
         )
         val adapter =
             CartAdaptar(ArrayList(cartfoodname), ArrayList(cartItemPrice), ArrayList(cartImage))

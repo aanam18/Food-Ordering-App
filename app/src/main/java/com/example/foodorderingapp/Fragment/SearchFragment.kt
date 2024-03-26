@@ -19,10 +19,10 @@ class SearchFragment : Fragment() {
 private lateinit var binding:FragmentSearchBinding
 private lateinit var adaptar : MenuAdapter
 
-private val originalMenuFoodName = listOf("Burger","Pizza","Noodles","Fried Rice")
-    private val OrignalMenuItemPrice = listOf("$5","$3","$10","$2")
+private val originalMenuFoodName = listOf("Burger","Pizza","Noodles","Tacos")
+    private val OrignalMenuItemPrice = listOf("5$","8$","9$","60$")
     private val orignialMenuImage = listOf(
-        R.drawable.menu2,R.drawable.menu3,R.drawable.menu5,R.drawable.menu4,
+        R.drawable.burger,R.drawable.pizza,R.drawable.noodles,R.drawable.tacos1,
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {

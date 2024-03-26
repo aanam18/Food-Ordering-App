@@ -6,19 +6,28 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.LinkMovementMethod
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.example.foodorderingapp.databinding.ActivityStartBinding
 
 class StartActivity : AppCompatActivity() {
-    private val binding:ActivityStartBinding by lazy{
+
+
+    private val binding: ActivityStartBinding by lazy {
         ActivityStartBinding.inflate(layoutInflater)
     }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.nextButton.setOnClickListener{
-            val intent = Intent(this,LoginActivity::class.java)
+
+        val galleryImageView = findViewById<ImageView>(R.id.gallery)
+        galleryImageView.setOnClickListener {
+            openGooglePhotos()
+        }
+        binding.nextButton.setOnClickListener {
+            val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
 
 //            val googleMaps = findViewById<TextView>(R.id.GoogleMaps)
@@ -39,12 +48,15 @@ class StartActivity : AppCompatActivity() {
                     startActivity(mapsIntent)
                 }
             }
-            val ImageGallery = findViewById<ImageView>(R.id.gallery)
-            ImageGallery.setOnClickListener {
-                val intent = Intent(Intent.ACTION_PICK)
-                intent.type = "image/*"
-                startActivity(intent)
-            }
+            //gALLERY
+//            val ImageGallery = findViewById<ImageView>(R.id.gallery)
+//            ImageGallery.setOnClickListener {
+//                val intent = Intent(Intent.ACTION_PICK)
+//                intent.type = "image/*"
+//                startActivity(intent)
+//            }
+
+
 
             val DailPhone = findViewById<ImageView>(R.id.phone)
             DailPhone.setOnClickListener {
@@ -53,7 +65,6 @@ class StartActivity : AppCompatActivity() {
                 intent.data = Uri.parse("tel:$phoneNumber")
                 startActivity(intent)
             }
-
             val google = findViewById<ImageView>(R.id.google)
             google.setOnClickListener {
                 val searchTerm = "Your search term" // Replace with the desired search term
@@ -68,9 +79,14 @@ class StartActivity : AppCompatActivity() {
                     val googleSearchIntent = Intent(Intent.ACTION_VIEW, Uri.parse(googleSearchUrl))
                     startActivity(googleSearchIntent)
                 }
+
+
+            }
+
                 val email = findViewById<ImageView>(R.id.email)
                 email.setOnClickListener {
-                    val recipientEmail = "recipient@example.com" // Replace with the recipient's email address
+                    val recipientEmail =
+                        "shaikhflora65@example.com" // Replace with the recipient's email address
                     val subject = "Subject of your email" // Replace with the subject of your email
                     val message = "Body of your email" // Replace with the body of your email
 
@@ -93,8 +109,34 @@ class StartActivity : AppCompatActivity() {
 
         }
 
+    private fun openGooglePhotos() {
+        val googlePhotosPackage = "com.google.android.apps.photos"
+        val googlePhotosIntent = packageManager.getLaunchIntentForPackage(googlePhotosPackage)
 
-
-
+        if (googlePhotosIntent != null) {
+            startActivity(googlePhotosIntent)
+        } else {
+            // Google Photos app is not installed, open Google Photos website
+            val googlePhotosUrl = "https://photos.google.com/"
+            val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(googlePhotosUrl))
+            startActivity(browserIntent)
+        }
     }
-    }
+
+//    private fun pickImageGallery() {
+//        val intent = Intent(Intent.ACTION_PICK)
+//        intent.type = "image/*"
+//        startActivityForResult(intent, IMAGE_REQUEST_CODE)
+//
+//    }
+
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        super.onActivityResult(requestCode, resultCode, data)
+//        if (requestCode == IMAGE_REQUEST_CODE && resultCode == RESULT_OK){
+//            imageView.setImageURI(data?.data)
+//        }
+//    }
+
+
+}
+

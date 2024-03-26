@@ -13,14 +13,16 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="267dp"
+            android:layout_height="110dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="32dp"
+            android:fontFamily="@font/acme"
             android:text="Congrats\n Your Order Placed"
             android:textAlignment="center"
+
             android:textColor="@color/textColor"
-            android:textSize="32sp" />
+            android:textSize="30sp" />
 
         <ImageView
             android:id="@+id/imageView7"
@@ -31,20 +33,21 @@
             android:src="@drawable/illustration" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:background="@drawable/gohomeshape"
             android:id="@+id/goHome"
             android:layout_width="157dp"
-            android:layout_gravity="center"
-            android:textAllCaps="false"
             android:layout_height="57dp"
-            android:textColor="@color/white"
-            android:textSize="20sp"
+            android:layout_gravity="center"
             android:layout_marginTop="32dp"
-            android:text="Go Home" />
-        
+            android:background="@drawable/gohomeshape"
+            android:text="Go Home"
+            android:fontFamily="@font/amaranth"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
 </FrameLayout>

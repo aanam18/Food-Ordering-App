@@ -24,18 +24,23 @@ class menuBottomSheetFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding= FragmentMenuBottomSheetBinding.inflate(inflater, container,false)
+        binding = FragmentMenuBottomSheetBinding.inflate(inflater, container, false)
         binding.buttonback.setOnClickListener {
             dismiss()
         }
-        val menufoodname = listOf("Burger","Pizza","Noodles","Fried Rice")
-        val menuItemPrice = listOf("$5","$3","$10","$2")
+        val menufoodname = listOf("Burger", "Pizza", "Noodles", "Fried Rice")
+        val menuItemPrice = listOf("$5", "$3", "$10", "$2")
         val menuImage = listOf(
-            R.drawable.menu2,R.drawable.menu3,R.drawable.menu5,R.drawable.menu4,
+            R.drawable.menu2, R.drawable.menu3, R.drawable.menu5, R.drawable.menu4,
         )
-        val adapter = MenuAdapter(ArrayList(menufoodname),ArrayList(menuItemPrice),ArrayList(menuImage),requireContext())
+        val adapter = MenuAdapter(
+            ArrayList(menufoodname),
+            ArrayList(menuItemPrice),
+            ArrayList(menuImage),
+            requireContext()
+        )
         binding.menuRecyclerView.layoutManager = LinearLayoutManager(requireContext())
-        binding.menuRecyclerView.adapter=adapter
+        binding.menuRecyclerView.adapter = adapter
         return binding.root
 
 

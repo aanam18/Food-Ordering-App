@@ -2,8 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:background="@color/white"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/white">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
@@ -41,6 +41,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="TextView"
+                android:fontFamily="@font/acme"
                 app:layout_constraintBottom_toBottomOf="@+id/menuImage"
                 app:layout_constraintStart_toEndOf="@+id/menuImage"
                 app:layout_constraintTop_toTopOf="@+id/menuImage" />
@@ -51,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="$5"
+                android:fontFamily="@font/acme"
                 android:textColor="#4CAF50"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.781"
@@ -65,6 +67,7 @@
                 android:background="@drawable/addtocart"
                 android:gravity="center"
                 android:text="Add To cart"
+                android:fontFamily="@font/amaranth"
                 android:textColor="#FFFFFF"
                 app:layout_constraintEnd_toEndOf="@+id/menuprice"
                 app:layout_constraintHorizontal_bias="0.545"
