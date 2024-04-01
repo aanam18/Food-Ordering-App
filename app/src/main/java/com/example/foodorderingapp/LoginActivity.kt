@@ -15,15 +15,15 @@ class LoginActivity : AppCompatActivity() {
     }
     private lateinit var auth: FirebaseAuth
 
-//    override fun onStart() {
-//        super.onStart()
-//        //check if user already logged iN
-//        val currentUser: FirebaseUser? = auth.currentUser
-//        if (currentUser != null) {
-//            startActivity(Intent(this, MainActivity::class.java))
-//            finish()
-//        }
-//    }
+    override fun onStart() {
+        super.onStart()
+        //check if user already logged iN
+        val currentUser: FirebaseUser? = auth.currentUser
+        if (currentUser != null) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
