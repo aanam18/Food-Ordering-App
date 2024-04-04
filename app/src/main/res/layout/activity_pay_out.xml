@@ -15,7 +15,7 @@
 
 
         <ImageButton
-            android:id="@+id/Back"
+            android:id="@+id/buttonBack"
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
@@ -64,7 +64,7 @@
 
             <EditText
 
-                android:id="@+id/name"
+                android:id="@+id/userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -72,7 +72,6 @@
                 android:ems="10"
                 android:fontFamily="@font/acme"
                 android:inputType="text"
-                android:text="Name"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -112,10 +111,6 @@
                 android:ems="10"
                 android:fontFamily="@font/acme"
                 android:inputType="textMultiLine"
-                android:text="Lorem ipsum is placeholder text
-commonly used in the graphic,
-print, and publishing industries
-for previewing layouts and visual"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -152,7 +147,6 @@ for previewing layouts and visual"
                 android:ems="10"
                 android:fontFamily="@font/acme"
                 android:inputType="text"
-                android:text="12345"
                 android:textColor="@color/black" />
         </LinearLayout>
 
@@ -224,7 +218,6 @@ for previewing layouts and visual"
                 android:gravity="end"
                 android:inputType="none"
                 android:paddingEnd="32dp"
-                android:text="$5"
                 android:textColor="@color/textColor"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -232,7 +225,7 @@ for previewing layouts and visual"
 
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/PlaceMyOrder"
+        android:id="@+id/placeMyOrder"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_gravity="bottom"

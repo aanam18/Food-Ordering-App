@@ -9,11 +9,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.foodorderingapp.R
 import com.example.foodorderingapp.adapter.BuyAgainAdapter
 import com.example.foodorderingapp.databinding.FragmentHistoryBinding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 
 class HistoryFragment : Fragment() {
     private lateinit var binding: FragmentHistoryBinding
     private lateinit var buyAgainAdapter:BuyAgainAdapter
+    private lateinit var database: FirebaseDatabase
+    lateinit var auth: FirebaseAuth
+    private lateinit var userId : String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

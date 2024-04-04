@@ -1,17 +1,27 @@
 package com.example.foodorderingapp.Fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.foodorderingapp.R
-
+import com.example.foodorderingapp.databinding.FragmentProfileBinding
+import com.example.foodorderingapp.model.UserModel
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import com.google.firebase.database.getValue
 
 
 class ProfileFragment : Fragment() {
-
-
+private lateinit var binding: FragmentProfileBinding
+private val auth = FirebaseAuth.getInstance()
+    private val database = FirebaseDatabase.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -21,8 +31,70 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding=FragmentProfileBinding.inflate(inflater,container,false)
+
+        setUserData()
+
+        binding.saveInfoButton.setOnClickListener {
+            val name = binding.userName.text.toString()
+            val email = binding.emailAddress.text.toString()
+            val address = binding.address.text.toString()
+            val phone = binding.phone.text.toString()
+
+            updateUserData(name, email,address,phone)
+
+
+        }
+
+        return binding.root
+    }
+
+    private fun updateUserData(name: String, email: String, address: String, phone: String) {
+        val userId = auth.currentUser?.uid
+        if (userId!=null){
+            val userReference = database.getReference("user").child(userId)
+            val userData = hashMapOf(
+                "name" to name,
+                "address" to address,
+                "email" to email,
+                "phone" to phone
+
+            )
+            userReference.setValue(userData).addOnSuccessListener {
+                Toast.makeText(requireContext(),"Profile Updated Successfully",Toast.LENGTH_SHORT).show()
+            }
+                .addOnFailureListener{
+                    Toast.makeText(requireContext(),"Profile Update Falied",Toast.LENGTH_SHORT).show()
+                }
+
+        }
+    }
+
+
+    private fun setUserData() {
+        val userId = auth.currentUser?.uid
+            if (userId!=null){
+                val userReference = database.getReference("user").child(userId)
+                userReference.addListenerForSingleValueEvent(object :ValueEventListener{
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        if (snapshot.exists()){
+                            val userProfile = snapshot.getValue(UserModel::class.java)
+                            if (userProfile!=null){
+                                binding.userName.setText(userProfile.name)
+                                binding.address.setText(userProfile.address)
+                                binding.emailAddress.setText(userProfile.email)
+                                binding.phone.setText(userProfile.phone)
+                                Log.d("ProfileFragment", "onDataChange: DataSnapshot exists - ${snapshot.exists()}")
+
+                            }
+                        }
+                    }
+
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+                })
+            }
     }
 
 

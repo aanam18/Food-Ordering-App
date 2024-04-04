@@ -117,7 +117,7 @@
         app:srcCompat="@drawable/google_icon" />
 
     <ImageView
-        android:id="@+id/email"
+        android:id="@+id/emailAddress"
         android:layout_width="69dp"
         android:layout_height="47dp"
         app:layout_constraintBottom_toTopOf="@+id/nextButton"

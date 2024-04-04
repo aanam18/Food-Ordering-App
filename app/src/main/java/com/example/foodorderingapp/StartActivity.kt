@@ -74,7 +74,7 @@ class StartActivity : AppCompatActivity() {
 
             }
 
-            val email = findViewById<ImageView>(R.id.email)
+            val email = findViewById<ImageView>(R.id.emailAddress)
             email.setOnClickListener {
                 val recipientEmail =
                     "shaikhflora65@example.com" // Replace with the recipient's email address
